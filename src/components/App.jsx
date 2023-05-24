@@ -41,9 +41,10 @@ export default class App extends Component {
             options={options}
             onLeaveFeedback={this.onLeaveFeedback}
           />
-        </Section>
-        {total === 0 && <Notification message="There is no feedback" />}
-        {total > 0 && (
+          </Section>
+        {total === 0 ? (
+          <Notification message="There is no feedback" />
+        ) : (
           <Section title="Statistics">
             <Statistics
               statistics={statistics}
